@@ -1,24 +1,23 @@
 name: Build and Deploy Code
 
 on: [push, pull_request]
-
+env:
+  APP_ENV: development
+  APP_MONGO_USER: test
+  APP_MONGO_PASS: password
+  APP_MONGO_DB: test
 jobs:
   job1:
     runs-on: ubuntu-latest
     services:
-      mongodb:
-          image: mongo
-          env:
-            MONGO_INITDB_ROOT_USERNAME: test
-            MONGO_INITDB_ROOT_PASSWORD: password
-            MONGO_INITDB_DATABASE: test
-          options: >-
-            --health-cmd mongo
-            --health-interval 10s
-            --health-timeout 5s
-            --health-retries 5
-          ports:
-            - 27017:27017
+      mongo:
+        image: mongo
+        env:
+          MONGO_INITDB_ROOT_USERNAME: ${APP_MONGO_USER}
+          MONGO_INITDB_ROOT_PASSWORD: ${APP_MONGO_PASS}
+          MONGO_INITDB_DATABASE: ${APP_MONGO_DB}
+        ports:
+          - 27017:27017
     steps:
       - name: pulling git repo
         uses: actions/checkout@v2
