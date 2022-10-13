@@ -5,6 +5,20 @@ on: [push, pull_request]
 jobs:
   job1:
     runs-on: ubuntu-latest
+    services:
+      mongodb:
+          image: mongo
+          env:
+            MONGO_INITDB_ROOT_USERNAME: test
+            MONGO_INITDB_ROOT_PASSWORD: password
+            MONGO_INITDB_DATABASE: test
+          options: >-
+            --health-cmd mongo
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
+          ports:
+            - 27017:27017
     steps:
       - name: pulling git repo
         uses: actions/checkout@v2
