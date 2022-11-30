@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Code') {
+    stage('Build') {
       steps {
-        git(url: 'https://github.com/akkaoui-abdou/fastapi-action', branch: 'main')
+       sh 'echo "Build"'
       }
     }
 
