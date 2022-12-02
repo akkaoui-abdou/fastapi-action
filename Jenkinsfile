@@ -26,7 +26,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile -t akkaoui/fastapi-gitaction:latest .'
+        sh 'docker build -t akkaoui/fastapi-gitaction:latest .'
       }
     }
 	
