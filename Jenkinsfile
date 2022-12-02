@@ -11,18 +11,6 @@ pipeline {
 		DOCKERHUB_CREDENTIALS = credentials('credential-docker')
 	}
   
-  stages {
-    stage('Checkout Code') {
-      steps {
-        git(url: 'https://github.com/akkaoui-abdou/fastapi-action.git', branch: 'main', credentialsId: 'github-credentials')
-      }
-    }
-
-    stage('Log') {
-      steps {
-        sh 'ls -la'
-      }
-    }
 
     stage('Build') {
       steps {
