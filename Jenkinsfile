@@ -16,8 +16,7 @@ pipeline {
 	  
     stage('Checkout Code') {
       steps {
-        //git(url: 'https://github.com/akkaoui-abdou/fastapi-action.git', branch: 'main', credentialsId: 'github-credentials')
-	     git 'https://github.com/akkaoui-abdou/fastapi-action.git'
+        git(url: 'https://github.com/akkaoui-abdou/fastapi-action.git', branch: 'main', credentialsId: 'github-credentials')
       }
     }
 
