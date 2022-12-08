@@ -1,22 +1,22 @@
 pipeline {
 	
 	
-  	agent { label 'linux' }
-	//agent any
+  	//agent { label 'linux' }
+	agent any
 	
 	options {
 		buildDiscarder(logRotator(numToKeepStr:'5'))
 	}
   
 	environment {
-		DOCKERHUB_CREDENTIALS = credentials('credential-docker')
+		DOCKERHUB_CREDENTIALS = credentials('credentials-docker')
 	}
   
   stages {
 	  
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/akkaoui-abdou/fastapi-action.git', branch: 'main', credentialsId: 'github-credentials')
+        git(url: 'https://github.com/akkaoui-abdou/fastapi-action.git', branch: 'main', credentialsId: 'credentials-github')
       }
     }
 
