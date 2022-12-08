@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN pip install --no-cache-dir --disable-pip-version-check --requirement /app/requirements.txt
+RUN pip install --no-cache-dir --disable-pip-version-check --upgrade --requirement /app/requirements.txt
 
 COPY ./app /app
 
