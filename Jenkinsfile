@@ -1,4 +1,4 @@
-node {
+pipeline {
 	
 	
   	//agent { label 'docker-build-node' }
