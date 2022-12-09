@@ -1,7 +1,7 @@
 pipeline {
 	
 	
-  	agent { label 'linux' }
+  	agent { label 'docker-build-node' }
 	//agent any
 	
 	options {
