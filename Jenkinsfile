@@ -1,8 +1,9 @@
-pipeline {
+node {
 	
 	 def app
+	checkout scm
   	//agent { label 'docker-build-node' }
-	agent any
+	//agent any
 
 	/*
 	options {
