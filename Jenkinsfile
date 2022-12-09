@@ -15,7 +15,7 @@ node {
 		DOCKERHUB_CREDENTIALS = credentials('credentials-docker')
 	}
   
-  stages {
+
 	  
 	  
     /*
@@ -67,7 +67,7 @@ node {
     }
 	  
 
-  }
+  
   
 	/*
   	post {
