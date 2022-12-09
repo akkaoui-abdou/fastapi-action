@@ -15,11 +15,20 @@ node {
   
   stages {
 	  
+	  
+   stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
+    }
+	  
+    /*
     stage('Checkout Code') {
       steps {
         git(url: 'https://github.com/akkaoui-abdou/fastapi-action.git', branch: 'main', credentialsId: 'credentials-github')
       }
     }
+    */
 
     stage('Log') {
       steps {
