@@ -1,12 +1,9 @@
-pipeline {
+node {
 	
 	
   	//agent { label 'docker-build-node' }
 	//agent any
-	
-	agent {
-        	docker { image 'ubuntu:latest' }
-   	}
+
 	
 	options {
 		buildDiscarder(logRotator(numToKeepStr:'5'))
