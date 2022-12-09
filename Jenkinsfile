@@ -1,8 +1,8 @@
 pipeline {
 	
 	
-  	agent { label 'docker-build-node' }
-	//agent any
+  	//agent { label 'docker-build-node' }
+	agent any
 	
 	options {
 		buildDiscarder(logRotator(numToKeepStr:'5'))
